@@ -16,14 +16,14 @@ class Pracownik:
         poz_f = round(poz_d,2) * 0.0775
 
         poz_h = brutto - round(poz_c,2) - 111.25
-        poz_h = math.trunc(poz_h)
+        poz_h = round(poz_h)
         
         poz_h_18 = round(poz_h,2) * 0.18
 
         poz_i = round(poz_h_18,2) - 46.33
 
         poz_j = round(poz_i,2) - round(poz_f,2)
-        poz_j = math.trunc(poz_j)
+        poz_j = round(poz_j)
 
         #print(f'poz_c = {round(poz_c,2)} poz_d = {round(poz_d,2)} poz_e = {round(poz_e,2)} poz_f = {round(poz_f,2)} poz_h = {round(poz_h,2)} poz_i = {round(poz_i,2)} poz_j = {round(poz_j,2)}')
         
