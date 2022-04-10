@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+import math
 @dataclass(frozen=True)
 class Pracownik:
     imie: str
@@ -16,14 +16,14 @@ class Pracownik:
         poz_f = round(poz_d,2) * 0.0775
 
         poz_h = brutto - round(poz_c,2) - 111.25
-        poz_h = int(poz_h)
+        poz_h = math.trunc(poz_h)
         
         poz_h_18 = round(poz_h,2) * 0.18
 
         poz_i = round(poz_h_18,2) - 46.33
 
         poz_j = round(poz_i,2) - round(poz_f,2)
-        poz_j = int(poz_j)
+        poz_j = math.trunc(poz_j)
 
         #print(f'poz_c = {round(poz_c,2)} poz_d = {round(poz_d,2)} poz_e = {round(poz_e,2)} poz_f = {round(poz_f,2)} poz_h = {round(poz_h,2)} poz_i = {round(poz_i,2)} poz_j = {round(poz_j,2)}')
         
@@ -63,9 +63,9 @@ def main():
         skladki = pracownik.skladki_pracodawcy()
         koszt = pracownik.koszt_pracodawcy()
         laczny_koszt += koszt
-        print(pracownik.imie,netto,skladki,koszt)
+        print(pracownik.imie,'%.2f' % netto, '%.2f' % skladki, '%.2f' %koszt)
     
-    print(laczny_koszt)
+    print('%.2f' %laczny_koszt)
 
     
 
